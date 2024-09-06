@@ -1,1 +1,2 @@
-# Todo-list
+# TodoList
+This is a To do list application

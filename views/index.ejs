@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+    <% if (locals.text) { %>
+        <h1><%= text %></h1>
+    <% } else { %>
+    <h1><%= todayDate %></h1>
+    <% } %>
+    <div class="new-task">
+        <form action="/addTask" method="POST">
+        <input type="text" name="newTask" placeholder="Add a new task..">
+        <button type="submit">Add</button>
+        </form>
+        <ul id="task-list">
+            <% tasks.forEach( function (task, index) { %>
+                <li>    
+                    <div class="task" >
+                        <input type="checkbox" id="custom-checkbox<%= index %>" name="task<%= index %>" value="<%= task %>">
+                        <label for="custom-checkbox<%= index %>" class="customCheckbox"></label>
+                        <span id="task-name"><%= task %></span>
+                        <form action="/deleteTask/<%= index %>?_method=DELETE" method="POST">
+                            <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </div>
+                </li>
+                
+            <% }); %>
+        </ul>
+    </div>
+</div>
+<% include("partials/footer.ejs") %>
+
+

@@ -1,0 +1,147 @@
+body{
+    background-color: #F2ECBE;
+    color: #9A3B3B;
+}
+nav{
+    padding: 10px;
+}
+
+.nav-link{
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 20px;
+    color: #9A3B3B;
+    animation: customAnimation 4s linear infinite;
+}
+.container{
+    width: 35%;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    background: white;
+    border-radius: 8px;
+    position: absolute;
+    overflow-y: auto;
+    transform: translate(-50%,-50%);
+    bottom: 0;
+    box-shadow: 5px 10px 15px #9A3B3B;
+}
+h1{
+    background-color: #E2C799;
+    padding: 8px 10px;
+    display: inline-block;
+    border-radius: 8px;
+    width: 95.8%;
+    text-align: center;
+    position: relative;
+    margin-top: 0;
+} 
+.new-task{
+    position: relative;
+    padding: 20px 20px;
+}
+.new-task input{
+    width: 70%;
+    height: 45px;
+    padding: 0px 5px;
+    color: #292929;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+}
+.new-task input:focus{
+    outline: none;
+    border-color: #9A3B3B;
+}
+.new-task button{
+    position: relative;
+    float: right;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #9A3B3B;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    width: 20%;
+    height: 45px;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    scroll-behavior: auto;
+}
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    cursor: pointer;
+    height: 50px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+}
+/* Custom Checkbox */
+.customCheckbox {
+    position: absolute;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=checkbox] {
+    visibility: hidden;
+    width: min-content;
+}
+input:checked ~ .customCheckbox {
+    background-color: #9A3B3B;
+ }
+input:checked ~ .customCheckbox + #task-name {
+    text-decoration: line-through;
+} 
+.customCheckbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+input:checked ~ .customCheckbox:after {
+    display: block;
+}
+.customCheckbox:after {
+    left: 6px;
+    bottom: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* .................... */
+#task-name{
+    font-family: 'Poppins',sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 10px;
+    margin-right: auto;
+    text-align: left;
+    float: left;
+}
+.task button{
+    background-color: #fff;
+    color: #9A3B3B;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 100%;
+    width: auto;
+    float: right;
+} 
